@@ -1,6 +1,7 @@
 package com.itmuch.cloud.client;
 
 import com.itmuch.cloud.model.User;
+import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,4 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface UserFeignClient {
     @RequestMapping("/{id}")
     public User findByIdFeign(@RequestParam("id") Long id);
+
+    @RequestMapping("/instance-info")
+    ServiceInstance showInfo();
 }
