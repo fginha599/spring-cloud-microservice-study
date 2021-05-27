@@ -13,7 +13,7 @@ public class FeignHystrixController {
   @Autowired
   private UserFeignHystrixClient userFeignHystrixClient;
 
-  @GetMapping("feign/{id}")
+  @GetMapping("feignHystrix/{id}")
   public User findByIdFeign(@PathVariable Long id) {
     User user = this.userFeignHystrixClient.findByIdFeign(id);
     return user;

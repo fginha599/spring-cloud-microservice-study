@@ -9,8 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- * 使⽤@FeignClient("microservice-provider-user")注解绑定micros
- * ervice-provider-user服务，还可以使⽤url参数指定⼀个URL。
+ * 使⽤@FeignClient("microservice-provider-user")注解绑定microservice-provider-user服务，还可以使⽤url参数指定⼀个URL。
  *
  * @author eacdy
  */
@@ -25,7 +24,7 @@ public interface UserFeignHystrixClient {
 
 
     @Component
-    static class HystrixClientFallback {
+    static class HystrixClientFallback implements UserFeignHystrixClient{
 
         private static final Logger LOGGER = LoggerFactory.getLogger(HystrixClientFallback.class);
 
