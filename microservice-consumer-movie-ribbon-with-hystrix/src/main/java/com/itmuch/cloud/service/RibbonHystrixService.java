@@ -15,7 +15,7 @@ public class RibbonHystrixService {
     private static final Logger LOGGER = LoggerFactory.getLogger(RibbonHystrixService.class);
 
     /**
-     * 使⽤@HystrixCommand注解指定当该⽅法发⽣异常时调⽤的⽅法
+     * 使⽤@HystrixCommand注解指定当该方法发生异常时调⽤的方法
      *
      * @param id id
      * @return 通过id查询到的⽤户
@@ -32,7 +32,7 @@ public class RibbonHystrixService {
      * @return 默认的⽤户
      */
     public User fallback(Long id) {
-        RibbonHystrixService.LOGGER.info("异常发⽣，进⼊fallback⽅法，接收的参数：id = {}", id);
+        RibbonHystrixService.LOGGER.info("异常发生，进入fallback方法，接收的参数：id = {}", id);
         User user = new User();
         user.setId(-1L);
         user.setUsername("default username");
