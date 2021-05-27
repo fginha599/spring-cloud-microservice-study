@@ -1,14 +1,15 @@
 package com.itmuch.cloud;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
+
 
 @SpringBootApplication
 @EnableHystrixDashboard
-public class HystrixDashboardApplication {
+public class MicroserviceHystrixDashboardApplication {
+
     public static void main(String[] args) {
-        new SpringApplicationBuilder(HystrixDashboardApplication.
-                class).web(true).run(args);
+        SpringApplication.run(MicroserviceHystrixDashboardApplication.class, args);
     }
 }
